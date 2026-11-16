@@ -1,0 +1,425 @@
+{
+  "startedAt": "2026-11-05T01:30:28.309Z",
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/v1/apps",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6790251925/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/e092ad22-ef35-4e6b-bfec-f59345af584d",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6779620781/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/b997f593-9609-431b-9e76-1bd99d712f63",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6779620781/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/08796068-645d-49c4-bee9-31f59b2973a5",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6779620781/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/b997f593-9609-431b-9e76-1bd99d712f63/reports",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReports/r14-b997f593-9609-431b-9e76-1bd99d712f63/instances",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6759559652/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/1a7066c1-b2be-46a1-9eb9-fc5560a1a11a",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6759559652/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/50ef0650-4eae-4803-81ca-916687a97347",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6759559652/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/1a7066c1-b2be-46a1-9eb9-fc5560a1a11a/reports",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReports/r14-1a7066c1-b2be-46a1-9eb9-fc5560a1a11a/instances",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6776548193/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/e10e9068-3008-4ff4-9178-8467e2bbb8b2",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6776548193/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/2f8e6273-d8c2-4eaf-aeaf-e22c30983173",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6776548193/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/e10e9068-3008-4ff4-9178-8467e2bbb8b2/reports",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReports/r14-e10e9068-3008-4ff4-9178-8467e2bbb8b2/instances",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6803437794/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/5f76fc15-4d81-4c23-bb37-b4b3db4d44d5",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6803437794/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/6f7b7872-99dd-4f7c-8ea4-09f3be843a2f",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6803437794/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/5f76fc15-4d81-4c23-bb37-b4b3db4d44d5/reports",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReports/r14-5f76fc15-4d81-4c23-bb37-b4b3db4d44d5/instances",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6797713359/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/8ff6910b-dcfe-4a32-98ac-aace0c9c0331",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6797713359/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/fe57ae87-8680-4728-89e7-be70813f660e",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6797713359/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/8ff6910b-dcfe-4a32-98ac-aace0c9c0331/reports",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReports/r14-8ff6910b-dcfe-4a32-98ac-aace0c9c0331/instances",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6758397280/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/57eebab7-b8e9-43ea-9387-52d0c55023ec",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6758397280/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/v1/analyticsReportRequests",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/a510330b-acb9-4382-88ea-6821801f96a7",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6758397280/analyticsReportRequests",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReportRequests/57eebab7-b8e9-43ea-9387-52d0c55023ec/reports",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/v1/analyticsReports/r14-57eebab7-b8e9-43ea-9387-52d0c55023ec/instances",
+      "status": 200
+    }
+  ],
+  "products": [
+    {
+      "name": "萤火待办 - 拖拽式日历清单",
+      "appId": "6790251925",
+      "requests": [
+        {
+          "accessType": "ONGOING",
+          "id": "e092ad22-ef35-4e6b-bfec-f59345af584d",
+          "outcome": "created",
+          "verified": true
+        }
+      ],
+      "error": "无法连接 Apple，请检查网络后重试。"
+    },
+    {
+      "name": "一步步 - 个人SOP管理与执行",
+      "appId": "6779620781",
+      "requests": [
+        {
+          "accessType": "ONGOING",
+          "id": "b997f593-9609-431b-9e76-1bd99d712f63",
+          "outcome": "created",
+          "verified": true
+        },
+        {
+          "accessType": "ONE_TIME_SNAPSHOT",
+          "id": "08796068-645d-49c4-bee9-31f59b2973a5",
+          "outcome": "created",
+          "verified": true
+        }
+      ],
+      "trendsStatus": "pending"
+    },
+    {
+      "name": "灵感随记 - 闪念卡片笔记",
+      "appId": "6759559652",
+      "requests": [
+        {
+          "accessType": "ONGOING",
+          "id": "1a7066c1-b2be-46a1-9eb9-fc5560a1a11a",
+          "outcome": "created",
+          "verified": true
+        },
+        {
+          "accessType": "ONE_TIME_SNAPSHOT",
+          "id": "50ef0650-4eae-4803-81ca-916687a97347",
+          "outcome": "created",
+          "verified": true
+        }
+      ],
+      "trendsStatus": "pending"
+    },
+    {
+      "name": "拾页 - 阅读摘录与读书笔记",
+      "appId": "6776548193",
+      "requests": [
+        {
+          "accessType": "ONGOING",
+          "id": "e10e9068-3008-4ff4-9178-8467e2bbb8b2",
+          "outcome": "created",
+          "verified": true
+        },
+        {
+          "accessType": "ONE_TIME_SNAPSHOT",
+          "id": "2f8e6273-d8c2-4eaf-aeaf-e22c30983173",
+          "outcome": "created",
+          "verified": true
+        }
+      ],
+      "trendsStatus": "pending"
+    },
+    {
+      "name": "Picin - 照片整理与相册漫游",
+      "appId": "6803437794",
+      "requests": [
+        {
+          "accessType": "ONGOING",
+          "id": "5f76fc15-4d81-4c23-bb37-b4b3db4d44d5",
+          "outcome": "created",
+          "verified": true
+        },
+        {
+          "accessType": "ONE_TIME_SNAPSHOT",
+          "id": "6f7b7872-99dd-4f7c-8ea4-09f3be843a2f",
+          "outcome": "created",
+          "verified": true
+        }
+      ],
+      "trendsStatus": "pending"
+    },
+    {
+      "name": "浮光计时器 - 极简光影专注计时与番茄钟",
+      "appId": "6797713359",
+      "requests": [
+        {
+          "accessType": "ONGOING",
+          "id": "8ff6910b-dcfe-4a32-98ac-aace0c9c0331",
+          "outcome": "created",
+          "verified": true
+        },
+        {
+          "accessType": "ONE_TIME_SNAPSHOT",
+          "id": "fe57ae87-8680-4728-89e7-be70813f660e",
+          "outcome": "created",
+          "verified": true
+        }
+      ],
+      "trendsStatus": "pending"
+    },
+    {
+      "name": "三件事 - 极简待办与专注计时",
+      "appId": "6758397280",
+      "requests": [
+        {
+          "accessType": "ONGOING",
+          "id": "57eebab7-b8e9-43ea-9387-52d0c55023ec",
+          "outcome": "created",
+          "verified": true
+        },
+        {
+          "accessType": "ONE_TIME_SNAPSHOT",
+          "id": "a510330b-acb9-4382-88ea-6821801f96a7",
+          "outcome": "created",
+          "verified": true
+        }
+      ],
+      "trendsStatus": "pending"
+    }
+  ],
+  "finishedAt": "2026-11-05T01:31:18.087Z"
+}

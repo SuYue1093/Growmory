@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-11-04T18:55:30.923Z",
+  "appleRequests": 138,
+  "nonGetRequests": 0,
+  "salesRequests": 0,
+  "products": [
+    {
+      "name": "萤火待办 - 拖拽式日历清单",
+      "appId": "6790251925",
+      "asoStatus": "ready",
+      "asoLocales": 6,
+      "trendsStatus": "forbidden",
+      "trendsMessage": "此 API Key 没有操作权限，请检查 Apple 账号角色及 App 访问权限。",
+      "trendRows": 0
+    },
+    {
+      "name": "一步步 - 个人SOP管理与执行",
+      "appId": "6779620781",
+      "asoStatus": "ready",
+      "asoLocales": 4,
+      "trendsStatus": "forbidden",
+      "trendsMessage": "此 API Key 没有操作权限，请检查 Apple 账号角色及 App 访问权限。",
+      "trendRows": 0
+    },
+    {
+      "name": "灵感随记 - 闪念卡片笔记",
+      "appId": "6759559652",
+      "asoStatus": "ready",
+      "asoLocales": 2,
+      "trendsStatus": "forbidden",
+      "trendsMessage": "此 API Key 没有操作权限，请检查 Apple 账号角色及 App 访问权限。",
+      "trendRows": 0
+    },
+    {
+      "name": "拾页 - 阅读摘录与读书笔记",
+      "appId": "6776548193",
+      "asoStatus": "ready",
+      "asoLocales": 2,
+      "trendsStatus": "forbidden",
+      "trendsMessage": "此 API Key 没有操作权限，请检查 Apple 账号角色及 App 访问权限。",
+      "trendRows": 0
+    },
+    {
+      "name": "Picin - 照片整理与相册漫游",
+      "appId": "6803437794",
+      "asoStatus": "ready",
+      "asoLocales": 2,
+      "trendsStatus": "forbidden",
+      "trendsMessage": "此 API Key 没有操作权限，请检查 Apple 账号角色及 App 访问权限。",
+      "trendRows": 0
+    },
+    {
+      "name": "浮光计时器 - 极简光影专注计时与番茄钟",
+      "appId": "6797713359",
+      "asoStatus": "ready",
+      "asoLocales": 2,
+      "trendsStatus": "forbidden",
+      "trendsMessage": "此 API Key 没有操作权限，请检查 Apple 账号角色及 App 访问权限。",
+      "trendRows": 0
+    },
+    {
+      "name": "三件事 - 极简待办与专注计时",
+      "appId": "6758397280",
+      "asoStatus": "ready",
+      "asoLocales": 1,
+      "trendsStatus": "forbidden",
+      "trendsMessage": "此 API Key 没有操作权限，请检查 Apple 账号角色及 App 访问权限。",
+      "trendRows": 0
+    }
+  ]
+}

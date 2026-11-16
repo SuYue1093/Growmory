@@ -1,0 +1,525 @@
+{
+  "checkedAt": "2026-11-04T18:18:05.491Z",
+  "apps": [
+    {
+      "name": "萤火待办 - 拖拽式日历清单",
+      "appId": "6790251925",
+      "versions": 39,
+      "noteLocales": [
+        "en-US",
+        "zh-Hans",
+        "en-GB",
+        "de-DE"
+      ],
+      "appInfoLocales": [
+        "en-US",
+        "de-DE",
+        "en-GB",
+        "zh-Hans"
+      ]
+    },
+    {
+      "name": "一步步 - 个人SOP管理与执行",
+      "appId": "6779620781",
+      "versions": 16,
+      "noteLocales": [
+        "zh-Hans",
+        "en-AU"
+      ],
+      "appInfoLocales": [
+        "zh-Hans",
+        "en-AU"
+      ]
+    },
+    {
+      "name": "灵感随记 - 闪念卡片笔记",
+      "appId": "6759559652",
+      "versions": 14,
+      "noteLocales": [
+        "en-US",
+        "zh-Hans"
+      ],
+      "appInfoLocales": [
+        "zh-Hans",
+        "en-US"
+      ]
+    },
+    {
+      "name": "拾页 - 阅读摘录与读书笔记",
+      "appId": "6776548193",
+      "versions": 4,
+      "noteLocales": [
+        "zh-Hans",
+        "en-US"
+      ],
+      "appInfoLocales": [
+        "en-US",
+        "zh-Hans"
+      ]
+    },
+    {
+      "name": "Picin - 照片整理与相册漫游",
+      "appId": "6803437794",
+      "versions": 8,
+      "noteLocales": [
+        "zh-Hans",
+        "en-US"
+      ],
+      "appInfoLocales": [
+        "zh-Hans",
+        "en-US"
+      ]
+    },
+    {
+      "name": "浮光计时器 - 极简光影专注计时与番茄钟",
+      "appId": "6797713359",
+      "versions": 1,
+      "noteLocales": [
+        "zh-Hans",
+        "en-US"
+      ],
+      "appInfoLocales": [
+        "zh-Hans",
+        "en-US"
+      ]
+    },
+    {
+      "name": "三件事 - 极简待办与专注计时",
+      "appId": "6758397280",
+      "versions": 2,
+      "noteLocales": [
+        "zh-Hans"
+      ],
+      "appInfoLocales": [
+        "zh-Hans"
+      ]
+    }
+  ],
+  "errors": [],
+  "calls": [
+    {
+      "method": "GET",
+      "path": "/v1/apps"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6790251925/appStoreVersions"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/0a7d5048-ac5f-4a37-802a-9f59e2ea44dc/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/63eafdc4-4c10-4ad1-9510-836c5b51421f/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/65d9b357-4438-48f3-82a8-e4182bb0543d/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/412767ab-353c-44f6-a9e7-f73fc55efc01/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/41d00f74-58b6-44d0-8928-4d1e9afa5161/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/008ff925-c9a5-4786-9674-b7e7872906ef/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/79e159b3-7089-4b1b-9867-6b34f8d84e6c/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/cc812d7c-d0d0-41c0-81d3-9e5d376cf102/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/dd2a7934-6f49-4850-a07d-c9f347571bce/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/540a1f3b-2999-4efc-b5c1-e8e433e634a6/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/f184103d-2152-4003-8aba-709e5e964389/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/8972c859-9844-4ed0-88b7-2a3f75890a06/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/0642c687-69a8-4282-bd75-a91e366d178c/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/7d629aa1-14fa-4cb6-ac95-6d357973b258/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/94ab9c8d-b65b-4e1d-ae5c-62dd4699a810/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/e17db5c5-688d-4f3f-9e0b-4223bf32dfb7/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/5f353aef-0fb3-42bb-b278-38996ef77271/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/fef0a1e1-71b8-429e-a145-eb318a3b90e7/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/1f56de2b-54b2-4698-b27c-ec54861c1159/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/21970e8e-ca29-4059-a8f3-5d5a5d2b4a97/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/239eeacb-9058-4883-87e7-e11ce4f78fbc/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/75e557b4-da1a-4206-81ef-cc31382422dc/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/0a2db5db-d899-49f6-8812-1c7460d17dd9/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/6434ed7b-d42e-4a36-a8c2-a5f79e570474/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/0bebd0a2-641a-492b-b18b-a579b2a7a870/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/77ee1567-c35d-424f-96d6-d03d41d5a978/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/d4c30648-52a5-4a9e-8176-2d8bd71939e8/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/06baabed-55d4-4e4d-97a0-391c651de51f/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/46172a79-7d1e-460f-8eee-6cb22bcc7e07/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/eda92c69-cad0-4364-bd09-aa325bbf2e86/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/2d7e09a9-7279-41a6-b885-70ccf89dc39f/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/ddbfd9b3-456f-47dc-89f7-11afb4cb5cc3/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/3ddfc7c4-4307-4e62-8658-a18199f0774f/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/2e0814b0-e05c-46d4-bad1-7b769340f5f0/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/281d876e-1aca-4bc8-873a-5dfe40c5d30c/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/a5ee517e-506e-4622-b92d-047e54b1349e/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/dce86e3a-2013-442a-8e8a-bfd85dd69fc6/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/76210a20-0dcf-48b6-96aa-5586df0372c5/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/1bee650b-9661-4fc3-8dec-d753be6a8d8a/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6790251925/appInfos"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appInfos/c974e08e-506d-466f-a6a1-7ac568dbfcfd/appInfoLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6779620781/appStoreVersions"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/f48091b2-c228-4b84-81bc-b6b4116a8686/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/5d865823-2ca1-4ea7-93a1-1e360ecac577/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/288af128-80d2-47cd-adcd-d89d711350de/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/0e83f118-0210-43e9-9b16-f3a968a24538/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/d67fd863-d2ef-442b-b74a-1d057e0ede4f/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/17a12d82-0e94-4a53-9103-cbdd82763e31/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/d81d9bc3-55d8-4367-9122-b5c1c3a87831/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/7e756cdf-c990-4834-9950-23ab95b45b5d/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/c69ed625-72fa-4035-ab57-a424f4937344/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/024f3399-69f1-42f9-8151-7d96259e38b3/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/c6e4ddd8-ee0c-4334-a573-cfcb4bf5f075/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/1c51d7a1-421d-44b2-8bec-2cb2e6faf37d/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/5b491acc-cad5-45e6-a055-68b506ae9ecc/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/c2a7bee8-b3c6-4040-80f4-3c41563b5fbf/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/a6fdf1d5-bde5-48af-9f51-23afcb864f2b/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/5adce128-0d47-466f-aa15-1cc633d5cde3/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6779620781/appInfos"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appInfos/6e00bfbf-f631-450f-9e7d-200c7743967a/appInfoLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6759559652/appStoreVersions"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/10e3bdc6-ff4f-417e-bf7c-3da0e0b83521/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/3c22e4e5-e349-4b58-ad96-918648e5130d/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/69f585c2-8bdc-425e-ae28-f56ea9ac2ea1/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/c6f5d33d-077e-4f5c-8ab8-436b496ccc57/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/ed78ecc4-e1a2-40df-a0af-83c0b3a191d3/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/2c0920f6-d92f-4755-ae84-538034ca65c4/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/bccbf769-e927-475b-9c64-18a8f2d7a4ad/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/0727fbc3-2300-4392-a119-4af78f9c2225/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/6fedf358-e34e-4c8d-bfdd-15a30da85f4d/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/9ee411b7-38f0-4d5f-98ec-fe913d166d30/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/a64a9e18-dfef-4cb4-ae3c-cbe7c0888a03/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/6a09c0cb-8588-4d6e-a63f-285682817577/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/4e0250db-3ee1-48a3-bfcf-d1f4fe0c66a7/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/06a33ca1-432f-422e-a36c-7fa0b1d7f0a3/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6759559652/appInfos"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appInfos/748d85f6-dbd4-4db5-8995-4e97edd231d0/appInfoLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6776548193/appStoreVersions"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/e7347315-27af-41c8-bb26-c325c363328c/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/8a6b8b97-5cd1-4c1e-9f79-65016c9dee65/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/67c24535-e58e-4dd4-9dbc-0d4d34347b7d/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/b0191b49-241f-4cec-8c48-1f5df0e734bf/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6776548193/appInfos"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appInfos/c53b675b-7652-485b-bab9-4303f793ac4d/appInfoLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6803437794/appStoreVersions"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/9e82e450-4167-43b1-b770-741af297666b/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/716b5499-5eb9-4e15-a6f5-4ec49a2c3780/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/d0947771-0849-4b28-bafb-a5f9ba9e53c4/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/b9d2c009-b0be-4f31-9d92-a357c1fda036/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/ec86e227-620c-406d-b3ba-d40ea9b3cdd7/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/0285ecf6-c205-40ca-97d6-9bde56d2dd1a/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/d97874d9-2cce-480b-9f1d-3bcb6cbfa68d/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/66a8a8de-0dca-429e-a419-78baf4f35d11/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6803437794/appInfos"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appInfos/d90789bb-1d9c-4c1a-a7c9-27a49e9589ce/appInfoLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6797713359/appStoreVersions"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/78708f99-2909-4cb5-84a9-4b54d6a7e681/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6797713359/appInfos"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appInfos/7f339614-acbc-4773-9eb0-25dd19976c10/appInfoLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6758397280/appStoreVersions"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/5d0d90ee-27ae-471a-be30-7684c5978b6e/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appStoreVersions/e423f1d3-f68c-4519-b19f-171a503e4279/appStoreVersionLocalizations"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/apps/6758397280/appInfos"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/appInfos/b6f9d8fc-3ba7-43e4-8eec-60b7589884dc/appInfoLocalizations"
+    }
+  ]
+}

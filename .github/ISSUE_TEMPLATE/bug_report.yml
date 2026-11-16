@@ -1,0 +1,39 @@
+name: 提交 Bug
+description: 提交 Growmory 运行中遇到的错误或异常
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: 感谢提交 Bug 报告！请尽量提供清晰的信息帮助定位问题。
+  - type: input
+    id: environment
+    attributes:
+      label: 运行环境
+      description: 操作系统版本与 Node.js 版本（例如 macOS 15, Node.js 24.11.0）
+      placeholder: macOS 15.1, Node.js 24.11.0
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 清晰描述发生了什么问题
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 如何一步步复现此问题
+      placeholder: |
+        1. 打开 '...'
+        2. 点击 '....'
+        3. 出现错误 '....'
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 控制台日志 / 截图
+      description: 终端报错或浏览器控制台报错（如有）

@@ -1,0 +1,44 @@
+{
+  "testedAt": "2026-11-04T18:27:48.673Z",
+  "beforeProducts": 0,
+  "products": [
+    {
+      "name": "萤火待办 - 拖拽式日历清单",
+      "appId": "6790251925",
+      "versions": 39
+    },
+    {
+      "name": "一步步 - 个人SOP管理与执行",
+      "appId": "6779620781",
+      "versions": 16
+    },
+    {
+      "name": "灵感随记 - 闪念卡片笔记",
+      "appId": "6759559652",
+      "versions": 14
+    },
+    {
+      "name": "拾页 - 阅读摘录与读书笔记",
+      "appId": "6776548193",
+      "versions": 4
+    },
+    {
+      "name": "Picin - 照片整理与相册漫游",
+      "appId": "6803437794",
+      "versions": 8
+    },
+    {
+      "name": "浮光计时器 - 极简光影专注计时与番茄钟",
+      "appId": "6797713359",
+      "versions": 1
+    },
+    {
+      "name": "三件事 - 极简待办与专注计时",
+      "appId": "6758397280",
+      "versions": 2
+    }
+  ],
+  "importedDocs": 7,
+  "refreshPassed": true,
+  "editFormPassed": true
+}
