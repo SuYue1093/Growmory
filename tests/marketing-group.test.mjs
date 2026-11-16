@@ -29,7 +29,12 @@ test('营销内容组创建、提示词复制、MCP多平台回填与国外平�
       server.once('error', reject);
     });
 
-    browser = await chromium.launch({ channel: 'chrome', headless: true });
+    const isMac = process.platform === 'darwin';
+    browser = await chromium.launch({
+      ...(isMac ? { channel: 'chrome' } : {}),
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+    });
     const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'] });
     const page = await context.newPage({ viewport: { width: 1440, height: 1100 } });
     const errors = [];

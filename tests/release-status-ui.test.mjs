@@ -27,7 +27,12 @@ test('版本发布状态为已发布、已归档时，从待办和继续准备�
       server.once('error', reject);
     });
 
-    browser = await chromium.launch({ channel: 'chrome', headless: true });
+    const isMac = process.platform === 'darwin';
+    browser = await chromium.launch({
+      ...(isMac ? { channel: 'chrome' } : {}),
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+    });
     const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } });
     const errors = [];
     page.on('pageerror', e => errors.push(e.message));
