@@ -3,11 +3,10 @@ import { PlatformLogo } from './platform-logo';
 import { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { SocialAnalytics } from './social-analytics';
-import { PersonalSiteDashboard } from './personal-site-dashboard';
 import type { Product } from './types';
 import { useI18n } from './i18n.ts';
 
-export function Operations({ products, initialPlatform = 'hisuyue' }: { products: Product[]; initialPlatform?: PlatformId }) {
+export function Operations({ products, initialPlatform = 'xiaohongshu' }: { products: Product[]; initialPlatform?: PlatformId }) {
   const { t } = useI18n();
   const [tab, setTab] = useState<'accounts' | 'data'>('data');
   const platformRail = useRef<HTMLElement>(null);
@@ -33,21 +32,15 @@ export function Operations({ products, initialPlatform = 'hisuyue' }: { products
       </div>
     </div>
 
-    {platform === 'hisuyue' ? (
-      <PersonalSiteDashboard products={products} />
-    ) : (
-      <>
-        <div className="tabs operations-tabs" role="tablist" aria-label={t("运营模块", "Operations Tabs")}>
-          {([['data', t('数据总览', 'Data Overview')], ['accounts', t('自媒体账号', 'Social Accounts')]] as const).map(([id, label]) => (
-            <button key={id} id={`operations-tab-${id}`} role="tab" aria-selected={tab === id} aria-controls={`operations-panel-${id}`} className={tab === id ? 'active' : ''} onClick={() => setTab(id)}>
-              {label}
-            </button>
-          ))}
-        </div>
-        <div id={`operations-panel-${tab}`} role="tabpanel" aria-labelledby={`operations-tab-${tab}`}>
-          <SocialAnalytics products={products} scope="all" activePlatform={platform} view={tab}/>
-        </div>
-      </>
-    )}
+    <div className="tabs operations-tabs" role="tablist" aria-label={t("运营模块", "Operations Tabs")}>
+      {([['data', t('数据总览', 'Data Overview')], ['accounts', t('自媒体账号', 'Social Accounts')]] as const).map(([id, label]) => (
+        <button key={id} id={`operations-tab-${id}`} role="tab" aria-selected={tab === id} aria-controls={`operations-panel-${id}`} className={tab === id ? 'active' : ''} onClick={() => setTab(id)}>
+          {label}
+        </button>
+      ))}
+    </div>
+    <div id={`operations-panel-${tab}`} role="tabpanel" aria-labelledby={`operations-tab-${tab}`}>
+      <SocialAnalytics products={products} scope="all" activePlatform={platform} view={tab}/>
+    </div>
   </div>;
 }

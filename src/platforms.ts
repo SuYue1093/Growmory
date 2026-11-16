@@ -1,5 +1,4 @@
 export const platformCatalog = [
-  { id: 'hisuyue', name: '个人主页', icon: 'hisuyue', color: '#647b5f', domestic: true, inlineImages: true, domains: ['hisuyue.com', 'xbtsc.com'], aliases: ['个人主页', 'hisuyue', '个人站', '官网'] },
   { id: 'xiaohongshu', name: '小红书', icon: 'xiaohongshu', color: '#ff2442', domestic: true, inlineImages: false, domains: ['xiaohongshu.com', 'xhslink.com', 'xhslink.cn'], aliases: ['小红书', 'xiaohongshu', 'rednote'] },
   { id: 'reddit', name: 'Reddit', icon: 'reddit', color: '#ff4500', domestic: false, inlineImages: false, domains: ['reddit.com', 'redd.it'], aliases: ['reddit'] },
   { id: 'x', name: 'X', icon: 'x', color: '#171717', domestic: false, inlineImages: false, domains: ['x.com', 'twitter.com', 't.co'], aliases: ['x', 'twitter'] },
@@ -30,8 +29,8 @@ export function supportsInlineImages(value?: string): boolean {
   return /公众号|微信|掘金|juejin|知乎|zhihu|medium|csdn|segmentfault|思否|简书|博客|blog|substack|专栏|infoq|notion|feishu|飞书|语雀|yuque/i.test(value);
 }
 export const platformName = (value: string) => findPlatform(value)?.name || value;
-// 个人主页（hisuyue）渠道的内容属于站点文章，不参与营销内容列表与数据分析时间轴展示
-export const isPersonalSiteChannel = (value?: string) => findPlatform(value || '')?.id === 'hisuyue';
+// 个人主页已从开源版本移除
+export const isPersonalSiteChannel = (_value?: string) => false;
 export function channelOptions(values: string[] = []) {
   return [...new Set([...platformNames, ...values.map(platformName).filter(Boolean)])];
 }

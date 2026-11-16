@@ -1,13 +1,4 @@
 import { designFiles, designFilePath, designResources } from "./aso-design-resources.mjs";
-import {
-  DEFAULT_LAB_DIR,
-  generateLabWithAi,
-  getLabResult,
-  renderLabDeviceModel,
-  renderLabHtmlComposition,
-  resolveLabFile,
-} from "./aso-lab.mjs";
-const asoLabDir = process.env.ASO_LAB_DIR ? resolve(process.env.ASO_LAB_DIR) : DEFAULT_LAB_DIR;
 import { importCreatorReport, exportCreatorReport, syncWechatReport } from './creator-reports.mjs';
 import { recurringReminders } from "./recurring-reminders.mjs";
 import { importX, xUploadBodyLimit } from './x-import.mjs';
@@ -120,8 +111,6 @@ const latestExchangeRate = openExchangeRate();
 const aso = openAso(store, apple);
 import { openAppStorePages } from "./app-store-pages.mjs";
 const appStorePages = openAppStorePages(store, apple);
-import { openPersonalSite } from "./personal-site.mjs";
-const personalSite = openPersonalSite(store);
 const production = process.env.NODE_ENV === "production";
 const vite = production
   ? null
@@ -163,64 +152,6 @@ const server = http.createServer(async (req, res) => {
       return send(res, 403, { error: "仅允许本机访问" });
     if (req.method === "GET" && url.pathname === "/api/aso/design-resources") {
       return send(res, 200, designResources());
-    }
-    if (req.method === "GET" && url.pathname === "/api/aso/lab/result") {
-      return send(res, 200, getLabResult({ labDir: asoLabDir, aiConfig }));
-    }
-    if (req.method === "GET" && url.pathname.startsWith("/api/aso/lab/file/")) {
-      const fileName = url.pathname.slice("/api/aso/lab/file/".length);
-      const target = resolveLabFile(asoLabDir, fileName);
-      if (!target) return send(res, 404, { error: "测试生成文件尚未生成" });
-      res.writeHead(200, {
-        "Content-Type": target.contentType,
-        "Cache-Control": "no-store",
-        "X-Content-Type-Options": "nosniff",
-      });
-      return createReadStream(target.path).pipe(res);
-    }
-    if (req.method === "POST" && url.pathname === "/api/aso/lab/render-device") {
-      try {
-        const payload = await body(req, 64 * 1024);
-        await renderLabDeviceModel({
-          labDir: asoLabDir,
-          finish: payload.finish,
-          yaw: payload.yaw,
-          pitch: payload.pitch,
-          roll: payload.roll,
-        });
-        return send(res, 200, getLabResult({ labDir: asoLabDir, aiConfig }));
-      } catch (err) {
-        return send(res, err.statusCode || 400, { error: err.message });
-      }
-    }
-    if (req.method === "POST" && url.pathname === "/api/aso/lab/render") {
-      try {
-        const payload = await body(req, 512 * 1024, "HTML 内容过大");
-        return send(res, 200, await renderLabHtmlComposition({
-          labDir: asoLabDir,
-          html: payload.html,
-          finish: payload.finish,
-          rerenderDevice: Boolean(payload.rerenderDevice),
-          yaw: payload.yaw,
-          pitch: payload.pitch,
-          roll: payload.roll,
-          aiConfig,
-        }));
-      } catch (err) {
-        return send(res, err.statusCode || 400, { error: err.message });
-      }
-    }
-    if (req.method === "POST" && url.pathname === "/api/aso/lab/generate") {
-      try {
-        const payload = await body(req, 64 * 1024);
-        return send(res, 200, await generateLabWithAi({
-          labDir: asoLabDir,
-          aiConfig,
-          artDirection: payload.artDirection,
-        }));
-      } catch (err) {
-        return send(res, err.statusCode || 400, { error: err.message });
-      }
     }
     if (req.method === "GET" && url.pathname.startsWith("/api/aso/design-resources/")) {
       const file = url.pathname.slice("/api/aso/design-resources/".length);
@@ -596,68 +527,6 @@ const server = http.createServer(async (req, res) => {
           }
           return send(res, 405, { error: "不支持的操作" });
         } catch (e) { return send(res, e.message.includes('已更新') ? 409 : 400, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/overview" && req.method === "GET") {
-        try {
-          const forceSync = url.searchParams.get("sync") === "1";
-          return send(res, 200, await personalSite.getOverview({ forceSync }));
-        }
-        catch (e) { return send(res, 500, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/articles" && req.method === "GET") {
-        try { return send(res, 200, await personalSite.getArticles()); }
-        catch (e) { return send(res, 500, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/unpublished-contents" && req.method === "GET") {
-        try { return send(res, 200, await personalSite.getUnpublishedContents()); }
-        catch (e) { return send(res, 500, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/publish" && req.method === "POST") {
-        try {
-          const input = await body(req);
-          return send(res, 200, await personalSite.publishArticle(input));
-        } catch (e) { return send(res, 400, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/delete" && req.method === "POST") {
-        try {
-          const input = await body(req);
-          return send(res, 200, personalSite.deleteArticle(input.slug));
-        } catch (e) { return send(res, 400, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/stats" && req.method === "POST") {
-        try {
-          const input = await body(req);
-          return send(res, 200, personalSite.updateStats(input));
-        } catch (e) { return send(res, 400, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/import-report" && req.method === "POST") {
-        try {
-          const input = await body(req, 10 * 1024 * 1024);
-          return send(res, 200, personalSite.importReport(input.content || input.text || ""));
-        } catch (e) { return send(res, 400, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/baidu-config") {
-        try {
-          if (req.method === "GET") return send(res, 200, personalSite.getBaiduConfig());
-          if (req.method === "POST") return send(res, 200, personalSite.saveBaiduConfig(await body(req)));
-          return send(res, 405, { error: "不支持的操作" });
-        } catch (e) { return send(res, 400, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/baidu/exchange-code" && req.method === "POST") {
-        try {
-          const input = await body(req);
-          return send(res, 200, await personalSite.exchangeBaiduCode(input));
-        } catch (e) { return send(res, 400, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/baidu/sync" && req.method === "POST") {
-        try {
-          return send(res, 200, await personalSite.syncBaiduData());
-        } catch (e) { return send(res, 400, { error: e.message }); }
-      }
-      if (url.pathname === "/api/personal-site/baidu/refresh-token" && req.method === "POST") {
-        try {
-          return send(res, 200, await personalSite.refreshBaiduToken());
-        } catch (e) { return send(res, 400, { error: e.message }); }
       }
       if (url.pathname === "/api/recurring-reminders" && req.method === "GET")
         return send(res, 200, recurringReminders(store));

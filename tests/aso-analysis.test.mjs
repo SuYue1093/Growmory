@@ -7,7 +7,6 @@ import { tmpdir } from 'node:os';
 import { fixture } from './helpers/aso-research-fixture.mjs';
 import { runTool, toolDefinitions, resolveAsoMarketCode } from '../server/mcp-tools.mjs';
 import { hydrateLucideIcons } from '../scripts/render-aso-html.mjs';
-import { generateLabWithAi, getLabResult, renderLabHtmlComposition, resolveLabFile } from '../server/aso-lab.mjs';
 
 test('ASO MCP 支持新版报告，旧研究写入入口保持关闭', () => {
   const f = fixture();
@@ -61,12 +60,12 @@ test('ASO 素材工具仅返回原始资源目录与截图/Logo，不预设版�
   } finally { f.store.close(); }
 });
 
-test('ASO HTML 渲染与实验室接口支持自由 HTML 排版、Lucide 图标注入及 24-bit RGB 输出', async () => {
+test('ASO HTML 渲染脚本支持 Lucide 图标注入及 24-bit RGB 输出', async () => {
   const hydrated = hydrateLucideIcons('<i data-lucide="camera" data-size="32" data-color="#C25E18"></i>');
   assert.match(hydrated, /<svg[^>]+width="32"/);
   assert.match(hydrated, /stroke="#C25E18"/);
 
-  const dir = mkdtempSync(join(tmpdir(), 'aso-lab-test-'));
+  const dir = mkdtempSync(join(tmpdir(), 'aso-render-test-'));
   try {
     const customHtml = `<!doctype html>
 <html>
@@ -88,16 +87,6 @@ test('ASO HTML 渲染与实验室接口支持自由 HTML 排版、Lucide 图标�
   </div>
 </body>
 </html>`;
-    const rendered = await renderLabHtmlComposition({ labDir: dir, html: customHtml });
-    assert.deepEqual(
-      { width: rendered.output.width, height: rendered.output.height, opaqueRgb: rendered.output.opaqueRgb },
-      { width: 1242, height: 2688, opaqueRgb: true },
-    );
-    assert.equal(rendered.thumb.width, 160);
-    assert.equal(rendered.thumb.opaqueRgb, true);
-    assert.equal(resolveLabFile(dir, '../package.json'), null);
-    assert.ok(resolveLabFile(dir, 'aso-lab-test-1242x2688.png'));
-
     const htmlPath = join(dir, 'cli.html');
     const outPath = join(dir, 'cli-out.png');
     const thumbPath = join(dir, 'cli-thumb.png');
@@ -111,79 +100,6 @@ test('ASO HTML 渲染与实验室接口支持自由 HTML 排版、Lucide 图标�
     assert.equal(cliPng.readUInt32BE(16), 1242);
     assert.equal(cliPng.readUInt32BE(20), 2688);
     assert.equal(cliPng[25], 2);
-
-    const mockAiConfig = {
-      get: () => ({ configured: true, baseUrl: 'https://example.com/v1', apiKey: 'sk-test', model: 'gpt-4.1-mini' }),
-    };
-    const aiDir = join(dir, 'ai-run');
-    let sentUserPrompt = '';
-    const aiResult = await generateLabWithAi({
-      labDir: aiDir,
-      aiConfig: mockAiConfig,
-      artDirection: '深空极光阅读氛围',
-      fetcher: async (_url, init) => {
-        sentUserPrompt = JSON.parse(init.body).messages[1].content;
-        return new Response(JSON.stringify({
-          choices: [{
-            message: {
-              content: JSON.stringify({
-                concept: '深夜书桌微光概念',
-                fonts: ['notoserifsc', 'plusjakartasans'],
-                palette: ['#080D1A', '#F8FAFC', '#60A5FA'],
-                device3d: { enabled: true, modelId: 'iphone-17-pro-max-3d', yaw: -12, pitch: 5, roll: -4, finish: 'champagne' },
-                html: customHtml.replace('/aso-lab/sample-screenshot.png', '/local/phone-3d.png'),
-              }),
-            },
-          }],
-        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
-      },
-    });
-    assert.match(sentUserPrompt, /\/aso-lab\/sample-screenshot\.png/);
-    assert.match(sentUserPrompt, /\/aso-lab\/sample-icon\.png/);
-    assert.doesNotMatch(sentUserPrompt, /Asset Material Preset/);
-    assert.equal(aiResult.device3d.file, 'phone-3d.png');
-    assert.equal(aiResult.output.width, 1242);
-    assert.equal(aiResult.output.height, 2688);
-    assert.equal(aiResult.output.opaqueRgb, true);
-    assert.equal(aiResult.trace.concept, '深夜书桌微光概念');
-    assert.equal(aiResult.trace.steps.length, 4);
-    assert.equal(aiResult.trace.audit.passed, true);
-    assert.equal(getLabResult({ labDir: aiDir, aiConfig: mockAiConfig }).aiModel, 'gpt-4.1-mini');
-
-    // 验证渲染后 DOM/对比度自动体检可检出小字与呆板居中标题，并触发 AI 二轮自动精修
-    const flawedHtml = customHtml
-      .replace('font-size: 96px;', 'font-size: 72px; text-align: center;')
-      .replace('<h1>把灵感留下</h1>', '<h1>把灵感留下</h1><p style="font-size:18px;color:#2B180C;">小字说明</p>');
-    const refineDir = join(dir, 'ai-refine');
-    let fetchCount = 0;
-    const refineResult = await generateLabWithAi({
-      labDir: refineDir,
-      aiConfig: mockAiConfig,
-      fetcher: async () => {
-        fetchCount += 1;
-        const htmlReply = fetchCount === 1
-          ? flawedHtml.replace('/aso-lab/sample-screenshot.png', '/local/phone-3d.png')
-          : customHtml.replace('/aso-lab/sample-screenshot.png', '/local/phone-3d.png');
-        return new Response(JSON.stringify({
-          choices: [{
-            message: {
-              content: JSON.stringify({
-                concept: fetchCount === 1 ? '初稿' : '二轮精修完成',
-                fonts: ['notosanssc'],
-                palette: ['#080D1A', '#F8FAFC', '#60A5FA'],
-                device3d: { enabled: true, modelId: 'iphone-17-pro-max-3d', yaw: -12, pitch: 5, roll: -4, finish: 'champagne' },
-                html: htmlReply,
-              }),
-            },
-          }],
-        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
-      },
-    });
-    assert.equal(fetchCount, 2);
-    assert.equal(refineResult.trace.concept, '二轮精修完成');
-    assert.equal(refineResult.trace.audit.passed, true);
-    assert.match(refineResult.trace.steps[3].title, /二轮自动精修/);
-    assert.ok(refineResult.device3d.width >= 900, `期望高分 3D 机模宽度 >= 900px，实际 ${refineResult.device3d.width}`);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }

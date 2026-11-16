@@ -31,11 +31,9 @@ import {
   FlaskConical,
 } from 'lucide-react';
 import { useI18n } from './i18n';
-import { buildAsoMediaPrompt } from './aso-media-prompt';
 import type { Product, Task, ReportTaskAnchor } from './types';
 import { uid, today } from './types';
 import type { AsoFields, AsoMediaPlan } from './aso-types';
-import screenshotProfiles from '../server/aso-screenshot-profiles.json';
 import { TaskDetailModal } from './task-detail-modal';
 import { captureReportTaskAnchors, reportTaskHighlights } from './trends/report-task-anchors';
 
@@ -344,8 +342,6 @@ export function AsoReports({
   const [error, setError] = useState('');
   const [applied, setApplied] = useState<string[]>([]);
   const [showGenerateModal, setShowGenerateModal] = useState(false);
-  const [mediaDevices, setMediaDevices] = useState<string[] | null>(null);
-  const [mediaDirection, setMediaDirection] = useState('');
   const [copiedPrompt, setCopiedPrompt] = useState(false);
   const [activeTocId, setActiveTocId] = useState<string>('');
 
@@ -1018,40 +1014,6 @@ Call save_aso_report with:
   if (selected) {
     const summaryBlocks = parseSummaryBlocks(selected.summary);
 
-    const productPlatforms = new Set([...product.platform.split(/[、,]/), ...(product.appStore?.versions || []).map(version => version.platform)]
-      .map(platform => platform.trim().toUpperCase()));
-    const availableDevices = ([
-      { name: 'iPhone', platform: 'IOS', group: 'IPHONE_FACE_ID_LARGE_PROFILE', studio: 'device: "iphone", deviceModel: "iphone-6-5"' },
-      { name: 'iPad', platform: 'IOS', group: 'IPAD_13_PROFILE', studio: 'device: "ipad", deviceModel: "ipad-pro-13"' },
-      { name: 'Mac', platform: 'MAC_OS', group: 'MAC_PROFILE', studio: undefined },
-    ] as const).filter(device => productPlatforms.has(device.platform) ||
-      (device.name === 'Mac' && (productPlatforms.has('MACOS') || productPlatforms.has('MAC'))) ||
-      (device.name === 'iPad' && (productPlatforms.has('IPAD') || productPlatforms.has('IPADOS'))) ||
-      (device.name === 'iPhone' && productPlatforms.has('IPHONE')))
-      .map(device => ({ ...device, size: screenshotProfiles[device.group][0].join(' × ') }));
-    const chosenDevices = availableDevices.filter(device => mediaDevices?.includes(device.name));
-    const targets = [...new Set(chosenDevices.map(device => device.platform))].map(platform => {
-      const versionIds = [...new Set(selected.plans.filter(plan =>
-        getPlanPlatform(plan, product) === platform).map(plan => plan.target.versionId))];
-      return { platform, versionId: versionIds.length === 1 ? versionIds[0] : undefined };
-    });
-    const target = JSON.stringify({
-      productId: product.id, reportId: selected.id, targets,
-      devices: chosenDevices.map(device => device.name), preferredSampleLocale: activeMediaLocale,
-      artDirection: mediaDirection.trim() || undefined
-    });
-    const sizes = chosenDevices.map(device =>
-      [device.name, device.size, device.group, device.studio].filter(Boolean).join(' · ')
-    ).join('\n');
-    const mediaPrompt = chosenDevices.length
-      ? buildAsoMediaPrompt({
-          target,
-          sizes,
-          hasStudio: chosenDevices.some(device => Boolean(device.studio)),
-          lang,
-        })
-      : '';
-
     return (
       <div className="report-reader-view">
         {/* 顶部面包屑与操作栏 */}
@@ -1506,58 +1468,7 @@ Call save_aso_report with:
                     </span>
                   )}
                 </div>
-
-                <button type="button" className="button primary small" disabled={!availableDevices.length}
-                  onClick={() => { setMediaDirection(''); setMediaDevices(availableDevices.map(device => device.name)); }}>
-                  <Sparkles size={14} />
-                  <span>{t('Agent生成图片', 'Generate Images with Agent')}</span>
-                </button>
               </div>
-
-              {mediaDevices && (
-                <div className="report-modal-backdrop" onClick={() => setMediaDevices(null)}>
-                  <div className="report-modal-content generate-modal" onClick={event => event.stopPropagation()}
-                    onKeyDown={event => { if (event.key === 'Escape') setMediaDevices(null); }}
-                    role="dialog" aria-modal="true" aria-labelledby="aso-media-prompt-title">
-                    <div className="modal-top-bar">
-                      <h3 id="aso-media-prompt-title" className="modal-title">{t('Agent生成图片', 'Generate Images with Agent')}</h3>
-                      <button type="button" className="icon-button" aria-label={t('关闭', 'Close')} onClick={() => setMediaDevices(null)}><X size={18} /></button>
-                    </div>
-                    <p>{t('复制提示词给已连接 Growmory MCP 的本机 Agent。Agent 会结合 3D 真机模型、编辑级排版与氛围背景（或生图底图）合成高设计感首图，确认后制作各语言套图并回填草稿。',
-                      'Send the prompt to a local agent with Growmory MCP. The agent combines 3D device renders, editorial typography, and atmospheric studio backdrops to craft high-design App Store screenshots, then saves localized sets after approval.')}</p>
-                    <fieldset className="aso-media-prompt-devices">
-                      <legend>{t('生成平台（可多选）', 'Platforms (select one or more)')}</legend>
-                      {availableDevices.map(device => (
-                        <label key={device.name}>
-                          <input type="checkbox" checked={mediaDevices.includes(device.name)} onChange={event => {
-                            setMediaDevices(event.target.checked ? [...mediaDevices, device.name] : mediaDevices.filter(name => name !== device.name));
-                          }} />
-                          <span><strong>{device.name}</strong><small>{device.size}</small></span>
-                        </label>
-                      ))}
-                    </fieldset>
-                    <label className="aso-media-art-direction">
-                      <span>{t('画面方向（可选）', 'Art direction (optional)')}</span>
-                      <input value={mediaDirection} onChange={event => setMediaDirection(event.target.value)}
-                        placeholder={t('例如：暖调纸书与晨光', 'e.g. Warm paper and morning light')} />
-                    </label>
-                    <div className="modal-prompt-preview">
-                      <textarea readOnly rows={8} value={mediaPrompt} placeholder={t('请至少选择一个平台', 'Select at least one platform')} aria-label={t('图片生成提示词', 'Image generation prompt')} />
-                    </div>
-                    <div className="modal-bottom-actions">
-                      {onSelectTab && <button type="button" className="button secondary" onClick={() => { setMediaDevices(null); onSelectTab('media'); }}>{t('查看图片草稿', 'View Image Draft')}</button>}
-                      <button type="button" className="button primary" disabled={!mediaPrompt} onClick={async () => {
-                        try {
-                          await navigator.clipboard.writeText(mediaPrompt);
-                          notify?.(t('已复制图片生成提示词', 'Image generation prompt copied'));
-                        } catch {
-                          notify?.(t('复制失败，请手动复制提示词', 'Copy failed. Select and copy the prompt manually.'));
-                        }
-                      }}><Copy size={16} />{t('复制提示词', 'Copy Prompt')}</button>
-                    </div>
-                  </div>
-                </div>
-              )}
 
               {/* 存在结构化图片方案时的渲染 */}
               {mediaPlans.length > 0 ? (

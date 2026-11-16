@@ -54,10 +54,9 @@ Indie makers and solo developers often manage multiple mobile apps simultaneousl
 - **Territory & Source Breakdown**: Analyze top geographic regions and acquisition channels (App Store Search, Browse, App Referrers, Web Referrers).
 - **AI Diagnostics & Quick Tasks**: Generate weekly/monthly executive summaries with inline text-highlighting to instantly create actionable tasks.
 
-### 4. 📢 Multi-Platform Marketing & Blog Sync
+### 4. 📢 Multi-Platform Marketing Matrix
 - **Unified Marketing Calendar**: Plan, write, and track promotional posts across X (Twitter), Reddit, Product Hunt, Xiaohongshu, WeChat, and more.
-- **Static Site Publishing**: One-click sync from marketing posts to personal portfolio websites with automatic image optimization (WebP/PNG).
-- **Social & Web Traffic Analytics**: Connect website analytics (e.g. Baidu Tongji OpenAPI) directly within your portfolio overview.
+- **Publishing Pipeline & Engagement**: Track publishing status, live links, and engagement metrics across domestic and international channels.
 
 ### 5. 🤖 Native MCP (Model Context Protocol) Server
 Growmory includes a built-in standard MCP server exposing 40+ specialized tools to external AI Agents:
@@ -86,7 +85,7 @@ Copy the example environment file:
 ```bash
 cp .env.example .env
 ```
-Configure your AI provider keys (compatible with OpenAI Chat Completions API) or personal site domain as needed. (You can also configure AI keys anytime in the app Settings).
+Configure your AI provider keys (compatible with OpenAI Chat Completions API) as needed. (You can also configure AI keys anytime in the app Settings).
 
 ### 3. Start Development Server
 ```bash

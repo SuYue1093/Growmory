@@ -58,7 +58,6 @@ import type {
 } from "./types";
 import { uid, now, today, RELEASE_TAG_OPTIONS, RELEASE_TAG_CATEGORIES, HISTORICAL_RELEASE_TAGS, inferMarketingTags, isAiContent, COMMON_ASSET_LANGUAGES, getAssetLanguageLabel } from "./types";
 import "./style.css";
-import { AsoTemplateLab } from "./aso-template-lab";
 import { readLogo } from "./images";
 import { ReleasePublication } from "./release-publication";
 import { AppStoreFastImportModal } from "./app-store-fast-import";
@@ -85,7 +84,7 @@ import { TaskDetailModal } from "./task-detail-modal";
 import { useCurrency, formatDisplayPrice, replaceCurrencySymbol } from "./currency";
 
 type Page =
-  "operations" | "home" | "products" | "knowledge" | "assets" | "aso-lab" | "aso" | "analytics" | "setup" | "releases" | "contents" | "tasks" | "settings";
+  "operations" | "home" | "products" | "knowledge" | "assets" | "aso" | "analytics" | "setup" | "releases" | "contents" | "tasks" | "settings";
 type Field = {
   key: string;
   label: string;
@@ -111,7 +110,6 @@ const nav = [
   { id: "products", label: "产品", icon: Layers3 },
   { id: "knowledge", label: "资料库", icon: BookOpen },
   { id: "assets", label: "素材库", icon: ImageIcon },
-  { id: "aso-lab", label: "ASO 图片实验室", icon: Sparkles },
   { id: "analytics", label: "App 数据分析", icon: ChartNoAxesCombined },
   { id: "operations", label: "运营", icon: Rocket },
   { id: "contents", label: "营销内容", icon: FileText },
@@ -237,7 +235,7 @@ const readLocation = () => {
     q.set("page", "contents"); q.set("scope", q.get("product") || "all"); q.delete("product"); q.delete("tab");
   }
   if (q.get("page") === "promotion") q.set("page", "operations");
-  const pages = ["operations", "home", "products", "releases", "contents", "tasks", "settings", "setup", "knowledge", "assets", "aso-lab", "aso", "analytics"];
+  const pages = ["operations", "home", "products", "releases", "contents", "tasks", "settings", "setup", "knowledge", "assets", "aso", "analytics"];
   return {
     page: (q.get("page") === "products" && q.get("tab") === "trends" ? "analytics" : pages.includes(q.get("page") || "") ? q.get("page") : "home") as Page,
     scope: q.get("page") === "products" && q.get("tab") === "trends" ? q.get("product") || "all" : q.get("scope") === "__shared" ? "all" : q.get("scope") || "all", library: q.get("library") || (q.get("scope") === "__shared" ? "shared" : "all"),
@@ -1579,7 +1577,6 @@ function App() {
     setup: t("产品初始化"),
     knowledge: t("资料库"),
     assets: t("素材库"),
-    "aso-lab": t("ASO 图片实验室"),
     aso: t("ASO 优化"),
     analytics: t("App 数据分析"),
     tasks: t("待办事项", "To-do List"),
@@ -1796,7 +1793,7 @@ function App() {
                   <p className="page-description">{t(currentProduct ? tab === "overview" ? currentProduct.summary || platformText(currentProduct.platform) : tab === "docs" ? "整理事实，确认之后重复使用。" : tab === "assets" ? "保存与管理图片素材、宣传物料与版本截图。" : tab === "history" ? "从更新说明到商店提交。" : tab === "aso" ? "针对应用商店搜索流量，制定并提交关键词与文案优化方案。" : tab === "custom-pages" ? "针对特定营销渠道、搜索广告或受众配置定制截屏与深层链接。" : tab === "page-optimization" ? "开展原生 A/B 测试，对比测试不同图标与截屏的下载转化表现。" : "" : currentRelease ? shortName(product(currentRelease.productId)) + " · " + currentRelease.languages.join(" / ") : page === "home" ? "版本、资料与内容，集中处理。" : page === "knowledge" ? "所有产品资料与通用资料。" : page === "assets" ? "统一管理图片素材与设计物料，支持文件夹分类与跨版本关联。" : page === "products" ? "管理产品资料、版本与内容。" : page === "contents" ? (journalTab ? t("记录每天的开发片段，把真实经历写成日记和经验分享。", "Capture daily development moments and turn real experiences into stories.") : "先确认推广需求，再将提示词交给 AI Agent 创作，统一管理文章与发布记录。") : page === "analytics" ? (tab === "reports" ? "配置 Agent 分析提示词，通过 MCP 自动生成与管理 App 数据分析报告。" : "对比产品表现，追踪增长变化与数据覆盖。") : page === "tasks" ? "集中管理各产品的待确认资料、营销发布、ASO提交与版本更新。" : page === "settings" ? "连接服务，管理你的工作空间。" : "")}</p>
                 </div>
                 <div className="heading-actions">
-                  {!["home", "tasks", "settings", "setup", "contents", "analytics"].includes(page) && !currentRelease && !currentProduct && !["knowledge", "assets", "aso-lab"].includes(page) && (
+                  {!["home", "tasks", "settings", "setup", "contents", "analytics"].includes(page) && !currentRelease && !currentProduct && !["knowledge", "assets"].includes(page) && (
                     <label className="scope-select">
                       <Layers3 size={15} />
                       <select
@@ -1848,7 +1845,6 @@ function App() {
               {((productId && !currentProduct) || (releaseId && !currentRelease)) && <Empty title={t("该记录已不存在", "Record not found")} description={t("可能已在其他窗口删除，请返回列表选择。", "May have been deleted elsewhere, please return to list.")} action={<button className="button secondary" onClick={() => go("products")}>{t("返回产品", "Back to Products")}</button>} />}
               {page === "setup" && <Setup notify={notify} copy={copy} onImported={state => { stateRef.current = state; setData(state.data); }} />}
               {page === "knowledge" && library(libraryScope, true)}
-              {page === "aso-lab" && <AsoTemplateLab notify={notify} />}
               {page === "assets" && (
                 <AssetLibrary
                   data={data}
