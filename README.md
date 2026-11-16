@@ -10,6 +10,12 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/SuYue1093/Growmory/actions/workflows/ci.yml"><img src="https://github.com/SuYue1093/Growmory/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
+  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-%3E%3D24.11-brightgreen.svg" alt="Node.js 24+" /></a>
+</p>
+
+<p align="center">
   <a href="#-why-growmory">Why Growmory?</a> •
   <a href="#-key-features">Key Features</a> •
   <a href="#-quick-start">Quick Start</a> •

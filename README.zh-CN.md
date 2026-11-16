@@ -10,6 +10,12 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/SuYue1093/Growmory/actions/workflows/ci.yml"><img src="https://github.com/SuYue1093/Growmory/actions/workflows/ci.yml/badge.svg" alt="CI 构建状态" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT 开源协议" /></a>
+  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-%3E%3D24.11-brightgreen.svg" alt="Node.js 24+" /></a>
+</p>
+
+<p align="center">
   <a href="#-核心特性">核心特性</a> •
   <a href="#-快速上手">快速上手</a> •
   <a href="#-系统架构">系统架构</a> •
