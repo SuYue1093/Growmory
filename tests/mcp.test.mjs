@@ -10,12 +10,13 @@ import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js"
 
 test("真实 MCP 客户端通过 HTTP 与 stdio 管理资料，并执行权限与冲突检查", async () => {
   const dir = mkdtempSync(join(tmpdir(), "growmory-mcp-"));
-  const base = "http://127.0.0.1:5188";
+  const port = process.env.TEST_PORT || "5191";
+  const base = `http://127.0.0.1:${port}`;
   const child = spawn(process.execPath, ["server/index.mjs"], {
     env: {
       ...process.env,
       NODE_ENV: "production",
-      PORT: "5188",
+      PORT: port,
       DB_PATH: join(dir, "workspace.sqlite"),
     },
     stdio: "pipe",

@@ -44,10 +44,10 @@ Indie makers and solo developers often manage multiple mobile apps simultaneousl
 - **Version Timeline & History**: Manage multi-language release notes, readiness checks, and production release records with visual diffing.
 - **Structured Knowledge Base**: Nested markdown documentation with full-text search, automatic revision tracking, and revision diff review.
 
-### 2. 🎨 ASO Studio & Automated Screenshot Generation
+### 2. 🎨 ASO Studio & Store Metadata Optimization
 - **Store Metadata Optimization**: Character counter, keyword density analysis, and localization manager for App Store titles, subtitles, and keywords.
-- **Automated Screenshot & Mockup Studio**: Render pixel-perfect App Store promotional screenshots across multiple device form factors (6.9", 6.5", 5.5", iPad) using Remotion and 3D device models.
 - **CPP & PPO Experimentation**: Draft and manage Custom Product Pages (CPP) and Product Page Optimization (PPO) variants with A/B testing insights.
+- **Multi-Platform Consistency**: Manage copy drafts and store assets across iOS, iPadOS, and macOS with version diffing and readiness checks.
 
 ### 3. 📊 Analytics & Conversion Funnel
 - **App Store Connect Integration**: Track impressions, product page views, first-time downloads, redownloads, conversion rates, and sales trends.
@@ -93,8 +93,10 @@ npm run dev
 ```
 Open **http://localhost:5173** in your browser.
 
-> **💡 macOS One-Click Launch**:  
-> Double-click `scripts/start-macos.command` to automatically verify Node version, clear port conflicts, and launch the server.
+> **💡 One-Click Desktop Quick Launch**:  
+> - **macOS**: Double-click `scripts/start-macos.command`
+> - **Windows**: Double-click `start-windows.bat` in the repository root (or `scripts/start-windows.bat`)  
+> The script automatically verifies Node version (>= 24.11), resolves port conflicts, and boots the development server.
 
 ### 4. Production Build
 ```bash
@@ -148,7 +150,7 @@ Once connected, Claude or any MCP-compatible agent can directly read your portfo
 ## 📄 License & Notice
 
 - Source code is distributed under the [MIT License](LICENSE).
-- **Remotion Commercial License Notice**: The screenshot generation feature uses [Remotion](https://www.remotion.dev/). It is free for individuals and small teams meeting their exemption criteria; commercial enterprises require a commercial license. See [NOTICE.md](NOTICE.md) for details.
+- **Third-Party Licenses & Notices**: For details on third-party libraries and licensing terms, see [NOTICE.md](NOTICE.md).
 - For deep historical implementation notes, refer to [docs/dev-notes.md](docs/dev-notes.md).
 
 ---

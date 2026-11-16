@@ -28,6 +28,7 @@
     "build": "tsc -b && vite build",
     "start": "NODE_ENV=production node --env-file-if-exists=.env server/index.mjs",
     "start:macos": "bash scripts/start-macos.command",
+    "start:windows": "scripts\\start-windows.bat",
     "dev:sandbox": "bash scripts/test-sandbox.sh --server",
     "test:sandbox": "bash scripts/test-sandbox.sh",
     "aso:studio": "node scripts/aso-screenshot-studio.mjs",

@@ -43,10 +43,10 @@
 - **版本发布时间轴**：记录各版本的更新说明、发布状态与线上发布历史，直观对比版本差异。
 - **结构化资料库**：支持 Markdown 文档分级整理、全文搜索、版本修订与快速知识提取。
 
-### 2. 🎨 ASO 优化工坊与截图生成
+### 2. 🎨 ASO 优化工坊与商店元数据管理
 - **App Store 元数据深度优化**：多语言标题、副标题、关键词组分析与字符限制实时校验。
-- **自动化截图与视频渲染**：基于 Remotion 与 3D 设备样机，一键批量生成各机型（6.9"、6.5"、5.5"、iPad）的高清商店宣传图。
 - **CPP 与 PPO 实验管理**：支持 App Store 自定义产品页面（CPP）与产品页面优化（PPO）变体草稿管理。
+- **多平台与版本联动**：集中管理 iOS、iPadOS 与 macOS 版本的文案与素材，支持版本比对与差异复盘。
 
 ### 3. 📊 数据分析与转化漏斗
 - **App Store Connect 数据集成**：展示展现次数、产品页面查看次数、下载量、付费转化率及销售趋势。
@@ -92,8 +92,10 @@ npm run dev
 ```
 启动后在浏览器中访问：**http://localhost:5173**
 
-> **💡 macOS 快捷启动**：  
-> 双击运行 `scripts/start-macos.command`，脚本将自动检查 Node 版本、排查端口占用并一键拉起服务。
+> **💡 桌面端快捷一键启动**：  
+> - **macOS**：双击运行 `scripts/start-macos.command`
+> - **Windows**：双击运行根目录的 `start-windows.bat`（或 `scripts/start-windows.bat`）  
+> 脚本将自动检查 Node 环境与版本（>= 24.11）、排查端口占用并一键拉起开发服务。
 
 ### 4. 生产构建
 ```bash
@@ -146,7 +148,7 @@ Growmory 支持通过标准 Stdio 方式连接至外部 AI 客户端（如 Claud
 ## 📄 开源协议与声明
 
 - 本项目代码基于 [MIT License](LICENSE) 开源。
-- **Remotion 商业许可说明**：本项目在截图渲染模块使用了 Remotion。个人或符合其免商业许可条件的小团队可免费使用；企业商业用途需遵守 [Remotion Licensing](https://www.remotion.dev/license)。详情见 [NOTICE.md](NOTICE.md)。
+- **第三方依赖许可说明**：本项目引用的第三方组件与许可声明请参阅 [NOTICE.md](NOTICE.md)。
 - 更多历史设计与演进细节，请参阅 [docs/dev-notes.md](docs/dev-notes.md)。
 
 ---
