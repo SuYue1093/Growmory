@@ -1,0 +1,281 @@
+{
+  "products": [
+    {
+      "id": "demo-focuspulse",
+      "name": "FocusPulse - Visual Time Blocking",
+      "englishName": "FocusPulse",
+      "summary": "A calm iOS & macOS daily planner combining drag-and-drop time blocking, Pomodoro focus sessions, and Apple Calendar sync.",
+      "appId": "900100001",
+      "price": "Free · $4.99/mo or $39.99 Lifetime",
+      "platform": "iOS, macOS",
+      "website": "https://example.com/focuspulse",
+      "color": "blue"
+    },
+    {
+      "id": "demo-flowstep",
+      "name": "FlowStep - Personal SOP & Routines",
+      "englishName": "FlowStep",
+      "summary": "Turn recurring checklists, launch workflows, and daily habits into step-by-step interactive SOPs with Live Activities.",
+      "appId": "900100002",
+      "price": "Free · $14.99 One-time Pro",
+      "platform": "iOS, macOS",
+      "website": "https://example.com/flowstep",
+      "color": "violet"
+    }
+  ],
+  "docFolders": [
+    {
+      "id": "demo-folder-fp-core",
+      "productId": "demo-focuspulse",
+      "name": "Product & Positioning",
+      "parentId": ""
+    },
+    {
+      "id": "demo-folder-fs-core",
+      "productId": "demo-flowstep",
+      "name": "Product & Positioning",
+      "parentId": ""
+    }
+  ],
+  "docs": [
+    {
+      "id": "demo-doc-fp-positioning",
+      "productId": "demo-focuspulse",
+      "folderId": "demo-folder-fp-core",
+      "title": "FocusPulse Core Positioning & Differentiators",
+      "body": "## Target Audience\nIndie makers, designers, and remote engineers who feel overwhelmed by heavy project-management tools and just want a calm daily timeline.\n\n## Key Differentiators\n- **Drag-to-Block**: Drag any task straight onto the calendar timeline with haptic snapping.\n- **Two-Way Apple Calendar & Reminders Sync**: Zero account sign-up required; 100% private via iCloud.\n- **Focus Live Activity**: Dynamic Island countdown with gentle end-of-block chimes.\n\n## Pricing Model\n- Free tier: Unlimited tasks, basic calendar view.\n- Pro ($4.99/mo or $39.99 lifetime): Multi-calendar sync, recurring time blocks, macOS menu bar companion.",
+      "status": "confirmed",
+      "updatedAt": "2026-11-20 10:30",
+      "history": [
+        {
+          "body": "Initial positioning draft for FocusPulse.",
+          "at": "2026-11-10 09:00"
+        }
+      ]
+    },
+    {
+      "id": "demo-doc-fp-aso-notes",
+      "productId": "demo-focuspulse",
+      "folderId": "demo-folder-fp-core",
+      "title": "ASO Keyword & Messaging Draft (Pending Review)",
+      "body": "## Proposed en-US Metadata\n- **Title**: FocusPulse: Time Block Planner\n- **Subtitle**: Daily Calendar & Pomodoro Timer\n- **Keywords**: time blocking,adhd planner,daily schedule,pomodoro,to do list,routine,focus timer,habit,icloud\n\n## Notes\nAI draft generated via MCP — review character limits before copying to App Store Connect.",
+      "status": "pending",
+      "updatedAt": "2026-11-24 15:10",
+      "history": []
+    },
+    {
+      "id": "demo-doc-fs-positioning",
+      "productId": "demo-flowstep",
+      "folderId": "demo-folder-fs-core",
+      "title": "FlowStep Product Brief",
+      "body": "## What It Solves\nChecklists tell you *what* to do, but when you're tired you still skip steps. FlowStep guides you one focused card at a time with optional timers and floating macOS mini-window.\n\n## Popular Use Cases\n- Morning & evening routines\n- App Store release submission checklist\n- Video recording & pre-flight equipment check",
+      "status": "confirmed",
+      "updatedAt": "2026-11-18 14:00",
+      "history": []
+    }
+  ],
+  "assets": [],
+  "assetFolders": [],
+  "releases": [
+    {
+      "id": "demo-rel-fp-240",
+      "productId": "demo-focuspulse",
+      "version": "2.4.0",
+      "platforms": ["iOS", "macOS"],
+      "changes": "- Added interactive iOS 18 Control Center widget to start a 25-min focus block in one tap\n- New weekly energy heatmap in Focus Insights\n- Fixed occasional iCloud sync delay when switching between Mac and iPhone",
+      "status": "in_progress",
+      "tags": ["功能更新", "体验优化"],
+      "languages": ["en-US", "zh-Hans"],
+      "channels": ["X", "Reddit"],
+      "notes": [
+        {
+          "language": "en-US",
+          "body": "What's New in 2.4.0:\n• Control Center Quick Focus: Start a 25-minute time block from anywhere on iPhone.\n• Weekly Energy Heatmap: Spot your peak focus hours at a glance.\n• Faster iCloud sync between iPhone and Mac.",
+          "approved": true
+        },
+        {
+          "language": "zh-Hans",
+          "body": "2.4.0 更新内容：\n• 控制中心快捷专注：无需打开 App，一键开启 25 分钟专注时间块。\n• 每周专注热力图：直观回看高效时段。\n• 优化 iPhone 与 Mac 之间的 iCloud 同步速度。",
+          "approved": false
+        }
+      ],
+      "proposals": [],
+      "createdAt": "2026-11-22 18:00"
+    },
+    {
+      "id": "demo-rel-fs-130",
+      "productId": "demo-flowstep",
+      "version": "1.3.0",
+      "platforms": ["iOS", "macOS"],
+      "changes": "- Added floating always-on-top mini-player on macOS\n- Export & share SOP templates as Markdown",
+      "status": "published",
+      "publishedAt": "2026-11-15",
+      "tags": ["功能更新"],
+      "languages": ["en-US"],
+      "channels": ["X"],
+      "notes": [
+        {
+          "language": "en-US",
+          "body": "Introducing the macOS floating mini-window and one-click Markdown template sharing.",
+          "approved": true
+        }
+      ],
+      "proposals": [],
+      "createdAt": "2026-11-12 11:20"
+    }
+  ],
+  "contents": [
+    {
+      "id": "demo-content-fp-x",
+      "productId": "demo-focuspulse",
+      "productIds": ["demo-focuspulse"],
+      "title": "FocusPulse 2.4 Launch Thread: Control Center Quick Focus",
+      "body": "Shipped FocusPulse 2.4 today!\n\nBiggest friction with time blocking: opening an app just to start a timer.\n\nNow you can swipe down Control Center and start a 25-min focus block in 1 tap — synced live to your Mac menu bar.\n\nBuilt as a solo indie dev with zero tracking & 100% iCloud sync.",
+      "channel": "X",
+      "status": "ready",
+      "date": "2026-11-26",
+      "url": "",
+      "tags": ["版本发布", "功能介绍"],
+      "createdAt": "2026-11-24 16:00"
+    },
+    {
+      "id": "demo-content-fp-reddit",
+      "productId": "demo-focuspulse",
+      "productIds": ["demo-focuspulse"],
+      "title": "I added Control Center widgets & a weekly focus heatmap to my local-first time-blocking app",
+      "body": "Hey r/iOSProgramming! Over the past two weeks I refactored my WidgetKit timelines to support iOS 18 Control Center toggles for FocusPulse.\n\nHappy to share how I handled shared App Group SQLite access between the main app, Live Activity, and Control Center extension without deadlocks.",
+      "channel": "Reddit",
+      "status": "draft",
+      "date": "2026-11-27",
+      "url": "",
+      "tags": ["版本发布", "技术分享"],
+      "redditCommunities": [
+        {
+          "name": "r/iOSProgramming",
+          "reason": "Technical breakdown of WidgetKit + Control Center + App Group sync",
+          "rules": "Share concrete technical learnings; avoid pure promotional links.",
+          "notes": "Post on Saturday morning EST"
+        }
+      ],
+      "createdAt": "2026-11-25 09:30"
+    },
+    {
+      "id": "demo-content-fs-xhs",
+      "productId": "demo-flowstep",
+      "productIds": ["demo-flowstep"],
+      "title": "独立开发者的发版前检查清单：怎么避免每次提审都漏细节",
+      "body": "以前每次给 App 提审，总会漏掉某一项：不是忘了更新英文截图，就是忘了测恢复购买。\n\n后来我用 FlowStep 做了一套「iOS 发版 SOP」，每次发版前按步骤浮窗一步步打勾，10 分钟走完所有检查项，再也没被打回过。",
+      "channel": "小红书",
+      "status": "published",
+      "date": "2026-11-16",
+      "publishedAt": "2026-11-16",
+      "url": "https://example.com/demo-post",
+      "tags": ["独立开发", "使用场景"],
+      "createdAt": "2026-11-15 20:00"
+    }
+  ],
+  "contentGroups": [],
+  "tasks": [
+    {
+      "id": "demo-task-1",
+      "productId": "demo-focuspulse",
+      "title": "Review FocusPulse 2.4.0 zh-Hans release notes before App Store submission",
+      "date": "2026-11-27",
+      "done": false
+    },
+    {
+      "id": "demo-task-2",
+      "productId": "demo-focuspulse",
+      "title": "Publish Control Center launch thread on X after Apple review approves",
+      "date": "2026-11-28",
+      "done": false
+    },
+    {
+      "id": "demo-task-3",
+      "productId": "demo-flowstep",
+      "title": "Update en-US subtitle keyword test results",
+      "date": "2026-11-25",
+      "done": true
+    }
+  ],
+  "promotions": [],
+  "analyticsReports": [
+    {
+      "id": "demo-report-weekly",
+      "productId": "demo-focuspulse",
+      "title": "FocusPulse Weekly Growth Review (Demo)",
+      "summary": "Organic App Store Search impressions grew +18% WoW after updating the en-US subtitle to highlight 'Daily Calendar & Pomodoro Timer'.",
+      "period": "2026-11-18 ~ 2026-11-24",
+      "content": "## Executive Summary\n- **Impressions**: 14,820 (+18.4% WoW)\n- **Product Page Views**: 2,190 (+12.1% WoW)\n- **First-Time Downloads**: 412 (18.8% conversion rate)\n\n## Key Takeaways\n1. **App Store Search** remains the top acquisition channel (68% of downloads).\n2. **US & JP** storefronts show the highest conversion rate (>21%).\n\n## Recommended Next Actions\n- Run a Product Page Optimization test comparing dark vs. light calendar hero screenshots.\n- Localize Control Center feature callout for `ja` and `de-DE`.",
+      "tags": ["周报", "ASO"],
+      "createdAt": "2026-11-25 08:30",
+      "isRead": false
+    }
+  ],
+  "briefingSearchConfigs": [
+    {
+      "id": "demo-bcfg-1",
+      "productId": "demo-focuspulse",
+      "name": "Time Blocking & ADHD Planner Trends",
+      "weight": 8,
+      "enabled": true,
+      "category": "competitor_move",
+      "focusQuestions": [
+        "How are indie time-blocking apps adopting iOS 18 Control Center widgets?"
+      ],
+      "keywords": ["time blocking iOS", "Control Center widget", "adhd planner"],
+      "platforms": ["Reddit", "X", "Hacker News"],
+      "competitors": ["Structured", "Tiimo"],
+      "createdAt": "2026-11-20T08:00:00.000Z",
+      "updatedAt": "2026-11-20T08:00:00.000Z"
+    }
+  ],
+  "briefings": [
+    {
+      "id": "demo-briefing-1",
+      "date": "2026-11-25",
+      "timezone": "Asia/Shanghai",
+      "runAt": "2026-11-25T09:00:00.000Z",
+      "budget": "standard",
+      "status": "completed",
+      "frameworks": [
+        {
+          "productId": "demo-focuspulse",
+          "focusQuestions": ["How are indie time-blocking apps adopting iOS 18 Control Center widgets?"],
+          "competitors": ["Structured", "Tiimo"],
+          "platforms": ["Reddit", "X"],
+          "keywords": ["time blocking iOS", "Control Center widget"]
+        }
+      ],
+      "platformSummaries": [
+        {
+          "platform": "Reddit",
+          "query": "time blocking iOS Control Center widget",
+          "openedCount": 6
+        }
+      ],
+      "itemIds": ["demo-bitem-1"],
+      "note": "Demo intelligence briefing generated to showcase the daily radar workflow."
+    }
+  ],
+  "briefingItems": [
+    {
+      "id": "demo-bitem-1",
+      "briefingId": "demo-briefing-1",
+      "productId": "demo-focuspulse",
+      "category": "user_voice",
+      "title": "Users on r/productivity asking for one-tap Pomodoro start without unlocking phone",
+      "summary": "Multiple threads highlight friction in opening full planner apps just to start a focus timer; Lock Screen and Control Center triggers are top requested features.",
+      "relevance": "Directly validates FocusPulse 2.4.0 Control Center Quick Focus as the headline angle for Reddit & X launch copy.",
+      "platform": "Reddit",
+      "url": "https://example.com/demo-briefing-source",
+      "publishedAt": "2026-11-24",
+      "checkedAt": "2026-11-25T09:00:00.000Z",
+      "verification": "full",
+      "status": "saved",
+      "savedReason": "Great hook for 2.4.0 release announcement",
+      "savedAt": "2026-11-25T10:15:00.000Z",
+      "isRead": true
+    }
+  ]
+}

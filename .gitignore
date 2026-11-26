@@ -1,0 +1,37 @@
+# 依赖
+node_modules/
+
+# 本地数据与 SQLite 数据库
+data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+workspace.sqlite*
+server/*.sqlite*
+server/.secret.key
+
+# 环境配置与密钥
+.env
+.env.local
+.env.*.local
+
+# 构建与缓存产物
+dist/
+*.tsbuildinfo
+.vite/
+.tmp/
+.backups/
+.trae-*/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 操作系统与调试产物
+.DS_Store
+Thumbs.db
+.screenshots/
+playwright-report/
+test-results/
+启动本地环境.command
+重启服务.command

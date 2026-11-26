@@ -1,0 +1,24 @@
+name: 功能建议
+description: 为 Growmory 提出新的功能建议或改进方案
+title: "[FEAT] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 痛点与背景
+      description: 当前遇到了什么问题或不便？
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: 期望的解决方案
+      description: 你希望 Growmory 怎样支持或改进？
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: 其他背景信息
+      description: 参考实现、竞品做法或设计图（如有）

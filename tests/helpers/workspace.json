@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": "firefly",
+      "name": "测试产品",
+      "summary": "",
+      "appId": "123",
+      "price": "",
+      "platform": "IOS",
+      "website": "",
+      "color": "blue"
+    }
+  ],
+  "docs": [
+    {
+      "id": "doc-firefly",
+      "productId": "firefly",
+      "title": "介绍",
+      "body": "测试功能说明",
+      "status": "pending",
+      "history": [],
+      "updatedAt": "2026-11-04T18:25:58.446Z"
+    }
+  ],
+  "docFolders": [],
+  "releases": [],
+  "contents": [],
+  "tasks": []
+}
